@@ -1,37 +1,56 @@
 # Clubes
 En un municipio, los clubes de barrio están regulados de manera tal que se puede saber la calidad de cada uno. Se pide modelar utilizando el paradigma de objetos el dominio de un sistema que facilite la administración de estos clubes.
 
-Cada club debe poder ser evaluado. Al hacerlo se determina un número (no acotado) de puntos que se calcula a partir de las actividades que allí funcionan, tales como los equipos que practican deportes o las actividades sociales que periódicamente realizan algunos de sus socios.
+Cada club debe poder ser evaluado. Al hacerlo se determina un número (no acotado) de puntos que se calcula 
+a partir de las actividades que allí funcionan, tales como los equipos que practican deportes o 
+las actividades sociales que periódicamente realizan algunos de sus socios.
 
-De un equipo de un club se conoce cuál es su plantel (conjunto de jugadores) y su capitán (el cual también es, obviamente, miembro del plantel). De cada jugador se conoce el valor se su pase y la cantidad de partidos que jugó para su club.
+De un equipo de un club se conoce cuál es su plantel (conjunto de jugadores) 
+y su capitán (el cual también es, obviamente, miembro del plantel).
+ De cada jugador se conoce el valor se su pase y la cantidad de partidos que jugó para su club.
 
-De una actividad social se conoce su socio organizador y todos los socios participantes de la misma. De cada socio se sabe cuántos años lleva en la institución.
+De una actividad social se conoce su socio organizador y todos los socios participantes de la misma.
+De cada socio se sabe cuántos años lleva en la institución.
 
-A efectos de este sistema, todos los jugadores de un equipo son también socios del club; por lo tanto, podría darse que un jugador participe de una actividad social.
+A efectos de este sistema, todos los jugadores de un equipo son también socios del club;
+ por lo tanto, podría darse que un jugador participe de una actividad social.
 
 Un socio pertenece a un único club.
 
-Cada actividad (sea un equipo o una actividad social) es evaluada. La evaluación de un club depende de las evaluaciones de sus actividades, las cuales pueden ser modificadas por las sanciones que reciben.
+Cada actividad (sea un equipo o una actividad social) es evaluada. 
+La evaluación de un club depende de las evaluaciones de sus actividades,
+ las cuales pueden ser modificadas por las sanciones que reciben.
 
-Si bien cualquier club puede tener equipos y actividades sociales, cada club define un perfil que determina el foco de la institución. Éste puede ser tradicional, comunitario, o profesional.
+Si bien cualquier club puede tener equipos y actividades sociales, cada club define un perfil que determina el 
+foco de la institución. Éste puede ser tradicional, comunitario, o profesional.
 
 
 ## Requerimientos.
 
 ### Consultas simples
-- Saber todos los socios de un club, todos los jugadores de un equipo y todos los socios de una actividad social
+- Saber todos los socios de un club, 
+- todos los jugadores de un equipo y
+- todos los socios de una actividad social
 
 - Saber el socio más viejo de un club.
 
-- Obtener los socios destacados de un club, un socio destacado es aquel que es capitán de un equipo u organizador de una actividad social.
+- Obtener los socios destacados de un club, un socio destacado es aquel que
+ es capitán de un equipo u organizador de una actividad social.
 
 ### Estrella 
 
-Saber si un socio es estrella, lo cual es distinto de si se trata de un jugador o un socio común. 
-Un socio común es estrella si lleva más de 20 años en la institución. 
+Saber si un socio es estrella, 
+lo cual es distinto de si se trata de un jugador o un socio común. 
+
+
+Un socio común es estrella si lleva más de 20 años en la institución.
+ 
 Un jugador que tiene 50 o más partidos en el club es una estrella.
  
-Pero un jugador con menos partidos también podría serlo dependiendo del perfil del club:
+Pero un jugador con menos partidos también podría serlo 
+dependiendo del perfil del club:
+
+
 Si juega en un club Profesional, es estrella si el valor de su pase supera un valor configurable para el sistema, que es el mismo para todos los jugadores. 
 Si juega en un club Comunitario, es estrella si participa en 3 o más actividades del club (deportivas o sociales).
 Si juega en un club tradicional, puede ser estrella tanto porque su pase supera el valor configurado o porque participa en 3 o más actividades del club.
@@ -43,7 +62,7 @@ Ejemplo: En un club tradicional, bellota, bombon y burbuja son jugadoras, y el p
   - Profesor: solo asiste a los asados del domingo, tiene anio de antiguedad. Tiene 0 años de antiguedad.
   - el valor del pase para ser considerado estrella es de 500000.
 
-En este caso Bellota es estrella por el valor del pase. Burbuja es estrella por los partidos jugados. 
+En este caso Bellota es estrella por el valor del pase. Bombon es estrella por los partidos jugados. 
 Burbuja es estrella por tener 3 actividades. El profesor no es estrella ya que no tiene la antiguedad requerida
 
 En las mismas condiciones pero en un club profesional,  solo Bellota y Bombon son estrellas, mientras que 

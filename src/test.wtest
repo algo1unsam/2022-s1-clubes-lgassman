@@ -1,0 +1,29 @@
+import example.*
+
+describe "clubes" {
+	
+	const bellota = new Jugador(partidos=10)
+	const bombon = new Jugador(partidos=50, pase=100000)
+	const burbuja = new Jugador()
+	const profesor = new Socio(antiguedad=10)
+
+	const equipoFutbol = new Actividad(participantes=#{bellota, bombon, burbuja}, destacado=bellota)
+	const equipoBasquet = new Actividad(participantes=#{bombon, burbuja}, destacado=burbuja)
+	const asado = new Actividad(participantes=#{profesor, burbuja},destacado=profesor )
+	
+	
+	var unClub = new Tradicional(socios=#{bellota, bombon, burbuja, profesor},
+						actividades=#{equipoFutbol, equipoBasquet, asado})
+	
+	method initialize() {
+		municipio.addClub(unClub)
+	}
+	
+	
+	test "mas antiguo" {
+		assert.equals(profesor, unClub.masAntiguo())
+		
+	}
+	
+	
+}
